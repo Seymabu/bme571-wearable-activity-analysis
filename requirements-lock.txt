@@ -1,0 +1,8 @@
+# Exact direct analysis dependencies from the recorded run; Python 3.12.14.
+# This records direct versions, not a complete transitive or cross-platform lock.
+numpy==2.5.4
+pandas==3.1.0
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+threadpoolctl==3.7.0

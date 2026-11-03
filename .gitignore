@@ -1,0 +1,16 @@
+# Source data are downloaded from UCI and are not redistributed.
+data/
+*.zip
+*.download
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+.DS_Store
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/

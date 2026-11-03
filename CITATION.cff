@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this educational analysis, cite this repository and the source dataset separately."
+type: software
+title: "Wearable Activity Recognition: Generalization to Unseen Participants"
+authors:
+  - given-names: "Şeyma"
+    family-names: "Bozkurt Uzan"
+repository-code: "https://github.com/Seymabu/bme571-wearable-activity-analysis"
+url: "https://github.com/Seymabu/bme571-wearable-activity-analysis"
+license: MIT
+abstract: "A biomedical engineering teaching analysis of participant-separated activity recognition, contrasting a 561-feature logistic model with 18 prespecified accelerometer features."
+keywords:
+  - biomedical engineering
+  - wearable sensors
+  - human activity recognition
+  - machine learning
+  - reproducibility
