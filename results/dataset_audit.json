@@ -1,0 +1,100 @@
+{
+  "dataset": "UCI Human Activity Recognition Using Smartphones",
+  "provenance": {
+    "source_url": "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip",
+    "dataset_page": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+    "doi": "https://doi.org/10.24432/C54S4K",
+    "archive_sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+    "payload_sha256": "2045e435c955214b38145fb5fa00776c72814f01b203fec405152dac7d5bfeb0",
+    "archive_bytes": 61005872,
+    "payload_hash_verified": true,
+    "current_uci_license": "CC BY 4.0 (dataset landing page checked 2026-11-03)",
+    "historical_readme_commercial_restriction": true,
+    "license_note": "The current UCI landing page and historical archive README differ. Data are downloaded from UCI, not redistributed or relicensed by this project.",
+    "upstream_processing": "Creator-provided filtered and engineered features normalized to [-1,1]. The source does not establish train-only fitting of every upstream transformation.",
+    "sensor_units": "Underlying acceleration: g; angular velocity: radians/second. Released feature columns are normalized and do not retain those physical units.",
+    "sampling_hz": 50,
+    "window_seconds": 2.56,
+    "window_overlap_fraction": 0.5,
+    "readme_sha256": "eaee53f45825f349681a1a1b92a997a0082648f9b5bf93ddb3290caeede4b3a8",
+    "features_info_sha256": "5d7e7d1f204dcfba846043029ef7a15a07c2b3711ee0a122da031f5971b3b585"
+  },
+  "train_shape": [
+    7352,
+    561
+  ],
+  "test_shape": [
+    2947,
+    561
+  ],
+  "train_subjects": [
+    1,
+    3,
+    5,
+    6,
+    7,
+    8,
+    11,
+    14,
+    15,
+    16,
+    17,
+    19,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "test_subjects": [
+    2,
+    4,
+    9,
+    10,
+    12,
+    13,
+    18,
+    20,
+    24
+  ],
+  "subject_intersection": [],
+  "missing_or_nonfinite_values": 0,
+  "original_duplicate_feature_name_count": 84,
+  "unique_indexed_feature_names": true,
+  "activity_labels": {
+    "1": "WALKING",
+    "2": "WALKING_UPSTAIRS",
+    "3": "WALKING_DOWNSTAIRS",
+    "4": "SITTING",
+    "5": "STANDING",
+    "6": "LAYING"
+  },
+  "class_counts": {
+    "train": {
+      "WALKING": 1226,
+      "WALKING_UPSTAIRS": 1073,
+      "WALKING_DOWNSTAIRS": 986,
+      "SITTING": 1286,
+      "STANDING": 1374,
+      "LAYING": 1407
+    },
+    "test": {
+      "WALKING": 496,
+      "WALKING_UPSTAIRS": 471,
+      "WALKING_DOWNSTAIRS": 420,
+      "SITTING": 491,
+      "STANDING": 532,
+      "LAYING": 537
+    }
+  },
+  "all_six_activities_per_subject": {
+    "train": true,
+    "test": true
+  },
+  "compact_feature_count": 18,
+  "compact_definition": "tBodyAcc, tGravityAcc, tBodyAccJerk × mean()/std() × X/Y/Z; declared before test evaluation"
+}

@@ -1,0 +1,422 @@
+{
+  "study": "Wearable activity recognition: generalization to unseen participants",
+  "author": "Dr. Şeyma Bozkurt Uzan",
+  "seed": 571,
+  "created_utc": "2026-11-03T15:44:35.169586+00:00",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "primary_metric": "Equal-weight mean of participant-level six-class macro-F1",
+  "selection": {
+    "training_only": true,
+    "cv": "5-fold StratifiedGroupKFold by subject",
+    "candidate_C": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "group_equal_tuning": "Each training participant contributes once; fold means are not averaged with unequal person counts.",
+    "chosen": {
+      "full_logistic": {
+        "C": 1.0,
+        "training_cv_mean_subject_macro_f1": 0.9345437966110669
+      },
+      "compact_logistic": {
+        "C": 0.1,
+        "training_cv_mean_subject_macro_f1": 0.8687778159533168
+      }
+    }
+  },
+  "test_evaluation": {
+    "participants": 9,
+    "windows": 2947,
+    "fixed_official_split": true
+  },
+  "models": [
+    {
+      "model": "dummy",
+      "n_features": 0,
+      "selected_C": null,
+      "mean_subject_macro_f1": 0.05126918144558859,
+      "ci_low": 0.04931817248023122,
+      "ci_high": 0.05292329719249643,
+      "pooled_macro_f1": 0.05137772675086108,
+      "pooled_accuracy": 0.18221920597217509,
+      "pooled_balanced_accuracy": 0.16666666666666666
+    },
+    {
+      "model": "full_logistic",
+      "n_features": 561,
+      "selected_C": 1.0,
+      "mean_subject_macro_f1": 0.9518189959696409,
+      "ci_low": 0.9228973596776476,
+      "ci_high": 0.9772393024674566,
+      "pooled_macro_f1": 0.9546751044871322,
+      "pooled_accuracy": 0.9548693586698337,
+      "pooled_balanced_accuracy": 0.9534945771906651
+    },
+    {
+      "model": "compact_logistic",
+      "n_features": 18,
+      "selected_C": 0.1,
+      "mean_subject_macro_f1": 0.8182627295429431,
+      "ci_low": 0.7303995937193639,
+      "ci_high": 0.8971346377038942,
+      "pooled_macro_f1": 0.8390732213710264,
+      "pooled_accuracy": 0.8428910756701731,
+      "pooled_balanced_accuracy": 0.8378225497947357
+    }
+  ],
+  "compact_minus_full": {
+    "mean_difference": -0.133556266426698,
+    "ci_low": -0.19927636163477858,
+    "ci_high": -0.07033118171223068
+  },
+  "bootstrap": {
+    "method": "Paired resampling of participant-level score rows",
+    "replicates": 2000,
+    "confidence_level": 0.95,
+    "interval": "percentile",
+    "seed": 571,
+    "limitation": "Nine held-out participants; intervals are descriptive and conditional on fitted models and this split, not training uncertainty or clinical-population validation."
+  },
+  "class_reports": {
+    "dummy": {
+      "WALKING": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 496.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 471.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 420.0
+      },
+      "SITTING": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 491.0
+      },
+      "STANDING": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 532.0
+      },
+      "LAYING": {
+        "precision": 0.18221920597217509,
+        "recall": 1.0,
+        "f1-score": 0.3082663605051665,
+        "support": 537.0
+      },
+      "accuracy": 0.18221920597217509,
+      "macro avg": {
+        "precision": 0.03036986766202918,
+        "recall": 0.16666666666666666,
+        "f1-score": 0.05137772675086108,
+        "support": 2947.0
+      },
+      "weighted avg": {
+        "precision": 0.033203839025129966,
+        "recall": 0.18221920597217509,
+        "f1-score": 0.05617205143918371,
+        "support": 2947.0
+      }
+    },
+    "full_logistic": {
+      "WALKING": {
+        "precision": 0.9408396946564885,
+        "recall": 0.9939516129032258,
+        "f1-score": 0.9666666666666667,
+        "support": 496.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.9570815450643777,
+        "recall": 0.9469214437367304,
+        "f1-score": 0.951974386339381,
+        "support": 471.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.9899497487437185,
+        "recall": 0.9380952380952381,
+        "f1-score": 0.9633251833740831,
+        "support": 420.0
+      },
+      "SITTING": {
+        "precision": 0.9706546275395034,
+        "recall": 0.8757637474541752,
+        "f1-score": 0.9207708779443254,
+        "support": 491.0
+      },
+      "STANDING": {
+        "precision": 0.8900343642611683,
+        "recall": 0.9736842105263158,
+        "f1-score": 0.9299820466786356,
+        "support": 532.0
+      },
+      "LAYING": {
+        "precision": 0.99812734082397,
+        "recall": 0.9925512104283054,
+        "f1-score": 0.9953314659197012,
+        "support": 537.0
+      },
+      "accuracy": 0.9548693586698337,
+      "macro avg": {
+        "precision": 0.9577812201815377,
+        "recall": 0.9534945771906651,
+        "f1-score": 0.9546751044871322,
+        "support": 2947.0
+      },
+      "weighted avg": {
+        "precision": 0.9566694525546696,
+        "recall": 0.9548693586698337,
+        "f1-score": 0.9547964461324083,
+        "support": 2947.0
+      }
+    },
+    "compact_logistic": {
+      "WALKING": {
+        "precision": 0.8043087971274686,
+        "recall": 0.9032258064516129,
+        "f1-score": 0.8509021842355176,
+        "support": 496.0
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.8942731277533039,
+        "recall": 0.861995753715499,
+        "f1-score": 0.8778378378378379,
+        "support": 471.0
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.7783641160949868,
+        "recall": 0.7023809523809523,
+        "f1-score": 0.7384230287859824,
+        "support": 420.0
+      },
+      "SITTING": {
+        "precision": 0.8205689277899344,
+        "recall": 0.7637474541751528,
+        "f1-score": 0.7911392405063291,
+        "support": 491.0
+      },
+      "STANDING": {
+        "precision": 0.7640067911714771,
+        "recall": 0.8458646616541353,
+        "f1-score": 0.8028545941123997,
+        "support": 532.0
+      },
+      "LAYING": {
+        "precision": 0.9980430528375733,
+        "recall": 0.9497206703910615,
+        "f1-score": 0.9732824427480916,
+        "support": 537.0
+      },
+      "accuracy": 0.8428910756701731,
+      "macro avg": {
+        "precision": 0.843260802129124,
+        "recall": 0.8378225497947357,
+        "f1-score": 0.8390732213710264,
+        "support": 2947.0
+      },
+      "weighted avg": {
+        "precision": 0.8457254194532696,
+        "recall": 0.8428910756701731,
+        "f1-score": 0.8428461011213711,
+        "support": 2947.0
+      }
+    }
+  },
+  "confusion_matrices": {
+    "dummy": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        496
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        471
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        420
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        491
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        532
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        537
+      ]
+    ],
+    "full_logistic": [
+      [
+        493,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        24,
+        446,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        18,
+        394,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        430,
+        58,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        13,
+        518,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4,
+        533
+      ]
+    ],
+    "compact_logistic": [
+      [
+        448,
+        0,
+        48,
+        0,
+        0,
+        0
+      ],
+      [
+        29,
+        406,
+        36,
+        0,
+        0,
+        0
+      ],
+      [
+        80,
+        45,
+        295,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        375,
+        112,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        82,
+        450,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        27,
+        510
+      ]
+    ]
+  },
+  "dataset_provenance": {
+    "source_url": "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip",
+    "dataset_page": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+    "doi": "https://doi.org/10.24432/C54S4K",
+    "archive_sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+    "payload_sha256": "2045e435c955214b38145fb5fa00776c72814f01b203fec405152dac7d5bfeb0",
+    "archive_bytes": 61005872,
+    "payload_hash_verified": true,
+    "current_uci_license": "CC BY 4.0 (dataset landing page checked 2026-11-03)",
+    "historical_readme_commercial_restriction": true,
+    "license_note": "The current UCI landing page and historical archive README differ. Data are downloaded from UCI, not redistributed or relicensed by this project.",
+    "upstream_processing": "Creator-provided filtered and engineered features normalized to [-1,1]. The source does not establish train-only fitting of every upstream transformation.",
+    "sensor_units": "Underlying acceleration: g; angular velocity: radians/second. Released feature columns are normalized and do not retain those physical units.",
+    "sampling_hz": 50,
+    "window_seconds": 2.56,
+    "window_overlap_fraction": 0.5,
+    "readme_sha256": "eaee53f45825f349681a1a1b92a997a0082648f9b5bf93ddb3290caeede4b3a8",
+    "features_info_sha256": "5d7e7d1f204dcfba846043029ef7a15a07c2b3711ee0a122da031f5971b3b585"
+  },
+  "interpretation_limits": [
+    "Six scripted activities from waist-mounted smartphones; no clinical outcomes or rehabilitation efficacy are tested.",
+    "Overlapping windows are correlated; people, not windows, are the uncertainty resampling unit.",
+    "Compact feature counts suggest a design tradeoff; device energy, runtime and clinical utility were not measured.",
+    "The same held-out people compare prespecified models. Further model development requires fresh validation rather than repeated test optimization.",
+    "Creator-provided upstream feature normalization is inherited; only the additional pipeline scaling is demonstrably fitted on training rows."
+  ]
+}
