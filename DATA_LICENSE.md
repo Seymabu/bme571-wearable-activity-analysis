@@ -11,7 +11,7 @@ The analysis uses **Human Activity Recognition Using Smartphones**, created by J
 
 The UCI landing page checked on **3 November 2026** lists **Creative Commons Attribution 4.0 International (CC BY 4.0)**. The historical `UCI HAR Dataset/README.txt` inside the downloaded archive includes the sentence “Any commercial use is prohibited.” These source statements differ.
 
-This project records both statements. It does not resolve that discrepancy, redistribute the raw archive, or apply its code license to the source dataset. Anyone planning reuse beyond this educational analysis should consult the provider's applicable terms and obtain clarification when needed.
+This project records both statements. It does not resolve that discrepancy, redistribute the raw archive, or apply its code license to the source dataset. Anyone planning reuse of the source dataset should consult the provider's applicable terms and obtain clarification when needed.
 
 The downloader obtains the data directly from UCI. The `.gitignore` excludes the local `data/` directory. Keep the original attribution and source documentation with downloaded data. This repository contains analysis code, aggregate outputs and an indexed feature-name manifest; the dataset authors retain their data rights.
 

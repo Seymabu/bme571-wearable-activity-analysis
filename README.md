@@ -3,11 +3,11 @@
 **Generalization to unseen participants and a compact sensor-feature comparison**  
 **Dr. Şeyma Bozkurt Uzan**
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Seymabu/bme571-wearable-activity-analysis/blob/main/notebooks/01_Wearable_Activity_Recognition.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Seymabu/wearable-activity-analysis/blob/main/notebooks/01_Wearable_Activity_Recognition.ipynb)
 
 [English](README.md) · [Türkçe açıklama](README_TR.md) · [Model card](MODEL_CARD.md) · [Data attribution](DATA_LICENSE.md)
 
-A reproducible biomedical engineering teaching project for BME 571: use waist-mounted smartphone measurements to distinguish six activities in people excluded from model development. The workflow connects a biomedical question to a baseline, a controlled feature-set comparison and an engineering interpretation.
+An independent, reproducible biomedical engineering study by Dr. Şeyma Bozkurt Uzan: use waist-mounted smartphone measurements to distinguish six activities in people excluded from model development. The workflow connects a biomedical question to a baseline, a controlled feature-set comparison and an engineering interpretation.
 
 ## Main finding
 
@@ -45,13 +45,13 @@ Our fitted scaler stays inside training folds. The released features already con
 
 ## Run in Colab or locally
 
-Open the notebook above and run its cells in order. The notebook supports the teaching sequence **question → short concepts → guided code → one controlled extension → biomedical interpretation**.
+Open the notebook above and run its cells in order. The notebook follows the analysis workflow **question → methods → implementation → controlled comparison → biomedical interpretation**.
 
 For local execution, Python 3.12 was tested:
 
 ```bash
-git clone https://github.com/Seymabu/bme571-wearable-activity-analysis.git
-cd bme571-wearable-activity-analysis
+git clone https://github.com/Seymabu/wearable-activity-analysis.git
+cd wearable-activity-analysis
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -65,7 +65,7 @@ The first run downloads approximately 61 MB from UCI and verifies the original Z
 
 ## Repository contents
 
-- `notebooks/01_Wearable_Activity_Recognition.ipynb`: executed teaching notebook and interpretation prompts.
+- `notebooks/01_Wearable_Activity_Recognition.ipynb`: executed analysis notebook and interpretation.
 - `src/analysis.py`: source downloader, audits, training, evaluation and figures.
 - `tests/test_analysis.py`: checks for participant leakage, scaling, metric weighting, paired uncertainty and feature definitions.
 - `results/`: CSV/JSON results, feature manifest and five figures in PNG/SVG formats.

@@ -2,11 +2,11 @@
 
 **Project:** Wearable Activity Recognition: Generalization to Unseen Participants  
 **Author:** Dr. Şeyma Bozkurt Uzan  
-**Purpose:** Reproducible biomedical engineering education and benchmark analysis.
+**Purpose:** Independent, reproducible biomedical engineering research and benchmark analysis.
 
 ## Models and intended use
 
-A most-frequent classifier provides a trivial reference. Two standardized multinomial logistic-regression models compare the released 561-feature representation with a prespecified 18-feature accelerometer representation. The models support teaching of participant-aware evaluation, feature design and biomedical interpretation. The repository is not a deployed monitoring device or a clinical decision-support tool.
+A most-frequent classifier provides a trivial reference. Two standardized multinomial logistic-regression models compare the released 561-feature representation with a prespecified 18-feature accelerometer representation. The study examines participant-aware evaluation, feature design and biomedical interpretation. The repository is not a deployed monitoring device or a clinical decision-support tool.
 
 ## Data
 

@@ -2,9 +2,9 @@
 
 **Dr. Şeyma Bozkurt Uzan**
 
-[Colab'da aç](https://colab.research.google.com/github/Seymabu/bme571-wearable-activity-analysis/blob/main/notebooks/01_Wearable_Activity_Recognition.ipynb) · [English](README.md)
+[Colab'da aç](https://colab.research.google.com/github/Seymabu/wearable-activity-analysis/blob/main/notebooks/01_Wearable_Activity_Recognition.ipynb) · [English](README.md)
 
-Bu BME 571 eğitim projesinde temel soru şu: **Bir model, eğitim sırasında hiç görmediği kişilerin hareketlerini ne kadar iyi tanıyabilir? Daha az sensör özelliği kullanırsak performans nasıl değişir?**
+Dr. Şeyma Bozkurt Uzan’ın bu bağımsız çalışmasında temel soru şu: **Bir model, eğitim sırasında hiç görmediği kişilerin hareketlerini ne kadar iyi tanıyabilir? Daha az sensör özelliği kullanırsak performans nasıl değişir?**
 
 ## Biyomedikal mühendislik bağlantısı
 
@@ -26,21 +26,21 @@ Bu deney aynı anda hem kullanılan sensör özelliklerini hem de temsilin karma
 
 ![Özellik sayısı ve performans](results/figures/05_features_vs_performance.png)
 
-## Ders anlatım akışı
+## Analiz akışı
 
 1. **Biyomedikal soru:** Ölçüm neyi temsil ediyor, hangi aktiviteyi tahmin ediyoruz?
-2. **Kısa teori:** Sınıflandırma, düzenlileştirme, macro-F1 ve kişiye göre veri ayırma.
-3. **Birlikte Colab:** Veriyi inceleme, başlangıç modeli, eğitim verisinde çapraz doğrulama.
+2. **Yöntem:** Sınıflandırma, düzenlileştirme, macro-F1 ve kişiye göre veri ayırma.
+3. **Colab uygulaması:** Veriyi inceleme, başlangıç modeli, eğitim verisinde çapraz doğrulama.
 4. **Kontrollü deney:** Aynı sınıflandırıcıyı tam ve önceden belirlenmiş 18 özellikli veriyle karşılaştırma.
 5. **Biyomedikal yorum:** Hatalar hangi aktivitelerde yoğunlaşıyor ve cihaz tasarımı açısından ne ifade ediyor?
 
-Öğrenci, sadece bir doğruluk değeri raporlamak yerine ölçümün kaynağını, veri bölme yöntemini ve sonucun sınırlarını açıklıyor. Ek deneylerin yöntemlerini eğitim verisinde belirlemek gerekir; aynı test grubuna bakarak modeli tekrar tekrar iyileştirmek güvenilir değerlendirmeyi bozar.
+Analiz, doğruluk değerleriyle birlikte ölçümün kaynağını, veri bölme yöntemini ve sonuçların sınırlarını açıklıyor. Ek deneylerin yöntemlerini eğitim verisinde belirlemek gerekir; aynı test grubuna bakarak modeli tekrar tekrar iyileştirmek güvenilir değerlendirmeyi bozar.
 
 ## Güvenilirlik ve sınırlar
 
 Düzenlileştirme ayarı, yalnızca eğitimdeki kişiler üzerinde beş parçalı grup çapraz doğrulamayla seçildi. Ek ölçekleme her eğitim parçasında öğrenildi. Kaynak verideki özellikler ise veri üreticileri tarafından önceden işlenmiş ve normalize edilmiş; bu işlemlerin tamamının eğitim verisiyle sınırlı olduğunu iddia etmiyoruz.
 
-Belirsizlik hesabında tek tek pencereler yerine dokuz kişi yeniden örnekleniyor. Aralıklar bu küçük test grubuna ve eğitilmiş modellere bağlı; yeni bir klinik topluluğa genellenemez. Bu çalışma eğitim amaçlı, tekrar çalıştırılabilir bir analizdir; hakemli yayın değildir.
+Belirsizlik hesabında tek tek pencereler yerine dokuz kişi yeniden örnekleniyor. Aralıklar bu küçük test grubuna ve eğitilmiş modellere bağlı; yeni bir klinik topluluğa genellenemez. Bu çalışma bağımsız ve tekrar çalıştırılabilir bir analizdir; hakemli yayın değildir.
 
 ## Çalıştırma ve kaynaklar
 
