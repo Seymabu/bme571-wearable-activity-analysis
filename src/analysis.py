@@ -97,7 +97,7 @@ def compact_feature_indices(features: pd.DataFrame) -> np.ndarray:
 
 def _download_archive(target: Path) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
-    request = Request(DATA_URL, headers={"User-Agent": "BME571-educational-analysis/1.0"})
+    request = Request(DATA_URL, headers={"User-Agent": "wearable-activity-analysis/1.0"})
     partial = target.with_suffix(".download")
     try:
         with urlopen(request, timeout=120) as response, partial.open("wb") as handle:
